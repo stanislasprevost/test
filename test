@@ -1,0 +1,28 @@
+CREATE TABLE users (
+    user_id VARCHAR(5) PRIMARY KEY,
+    user_firstname VARCHAR(50),
+    user_lastname VARCHAR(50),
+   user_age INT,
+    user_city VARCHAR(50),
+    user_email VARCHAR(100)
+);
+INSERT INTO users (user_id, user_firstname, user_lastname, user_age, user_city, user_email) 
+VALUES
+('U1', 'Tim', 'Hoe', 24, 'London', 'tim@mail.com'),
+('U2', 'Mary', 'Carmen', 26, 'London', 'mary@mail.com'),
+('U3', 'Sophie', 'Lam', 20, 'Paris', 'sophie@work.com'),
+('U4', 'Oliver', 'Brown', 22, 'Paris', 'oliver@work.com');
+
+CREATE TABLE books (
+    book_id VARCHAR(5) PRIMARY KEY,
+    book_title VARCHAR(100),
+    book_pubyear INT,
+    book_author VARCHAR(100),
+    book_pubcity VARCHAR(50),
+    user_id VARCHAR(5),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+INSERT INTO users (user_id, user_firstname, user_lastname, user_age, user_city, user_email) VALUES ('U1', 'Tim', 'Hoe', 24, 'London', 'tim@mail.com'), ('U2', 'Mary', 'Carmen', 26, 'London', 'mary@mail.com'), ('U3', 'Sophie', 'Lam', 20, 'Paris', 'sophie@work.com'), ('U4', 'Oliver', 'Brown', 22, 'Paris', 'oliver@work.com');
+
+
